@@ -1,0 +1,13 @@
+.app {
+    overflow: hidden;
+    scrollbar-width: none; /* hides scrollbar but still scrolls */
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar {
+        display: none; /* hides scrollbar but still scrolls */
+    }
+}
+
+.create-list {
+    --background: transparent;
+    background-color: transparent;
+}
