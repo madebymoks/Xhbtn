@@ -12,8 +12,8 @@ import { createOutline, qrCodeOutline, addOutline, logoFacebook, logoTwitter, lo
 const Profile = () => {
     return (
         <IonPage>
-            <IonHeader class="ion-no-border">
-                <IonToolbar>
+            <IonHeader className='shadow-none' class="ion-no-border">
+                <IonToolbar className='scene-toolbar'>
 
                 </IonToolbar>
             </IonHeader>

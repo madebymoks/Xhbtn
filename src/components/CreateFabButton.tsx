@@ -4,13 +4,13 @@ import { add } from 'ionicons/icons';
 
 
 interface CreateFabButtonProps {
-    onClick: () => void;
+    id: string;
 }
 
-const CreateFabButton = ({onClick}: CreateFabButtonProps) => {
+const CreateFabButton = ({id}: CreateFabButtonProps) => {
     return (
             <IonFab slot="fixed" vertical="bottom" horizontal="end">
-                <div onClick={onClick} className='w-10 h-10 py-[11px] bg-gray-400/50 border-[0.5px] border-white/40 text-center align-middle items-center justify-center rounded-lg'>
+                <div id={id} className='w-10 h-10 py-[11px] bg-gray-400/70 border-[0.5px] border-white/40 text-center align-middle items-center justify-center rounded-lg'>
                     <IonIcon slot="icon-only" size='small' icon={add}></IonIcon>
                 </div>
             </IonFab>

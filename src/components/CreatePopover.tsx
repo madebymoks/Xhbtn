@@ -5,29 +5,41 @@ import CreateListItem from './CreateListItem';
 
 
 interface CreatePopoverProps {
-    isOpen: boolean;
-    onDidDismiss: () => void;
+    trigger: string;
+    openImage: () => void;
+    openModel: () => void;
+    openText: () => void;
+    openColor: () => void;
 }
 
-const CreatePopover = ({ isOpen, onDidDismiss }: CreatePopoverProps) => {
+const CreatePopover = ({ trigger, openImage, openModel, openText, openColor }: CreatePopoverProps) => {
 
     const menuList = [
-        { icon: imageOutline, label: "Insert an image" },
-        { icon: cubeOutline, label: "Insert an 3D Model" },
-        { icon: textOutline, label: "Insert an text" },
+        { icon: imageOutline, label: "Insert an image", type: "image" },
+        { icon: cubeOutline, label: "Insert an 3D Model", type: "model" },
+        { icon: textOutline, label: "Insert an text", type: "text" },
+        { icon: null, label: "Select a color" , type: "color"},
     ]
 
-    const openItem = () => {
-        console.log("Item clicked")
+    const openItem = (value: string) => {
+        if(value === "image"){
+            openImage()
+        } else if(value === "model"){
+            openModel()
+        } else if(value === "text"){
+            openText()
+        } else {
+            openColor()
+        }
     }
 
     return (
-        <IonPopover isOpen={isOpen} onDidDismiss={onDidDismiss} side="top" alignment="end">
+        <IonPopover className='rounded-lg' trigger={trigger} dismissOnSelect={true}>
             {/*<IonContent class="ion-padding">Hello World!</IonContent>*/}
-            <div className='w-full p-2 bg-slate-400/50 rounded-lg'>
+            <div className='w-full bg-slate-400/50'>
                 <IonList className='create-list' lines='none'>
                     {menuList.map((item, index) => (
-                        <CreateListItem createAction={() => {openItem(); onDidDismiss()}} key={index} label={item.label} icon={item.icon} />
+                        <CreateListItem createAction={() => openItem(item.type)} key={index} label={item.label} icon={item.icon} />
                     ))}
                 </IonList>
             </div>

@@ -11,12 +11,16 @@ interface CreateListItemProps {
 const CreateListItem: React.FC<CreateListItemProps> = ({ label, icon, createAction }) => {
     return (
         <IonItem className='create-list' onClick={createAction}>
-                <p className='text-xs'>{label}</p>
-                <IonButtons slot='end'>
+            <p className='text-xs'>{label}</p>
+            <IonButtons slot='end'>
+                {icon ?
                     <IonButton>
                         <IonIcon slot="icon-only" size='small' color='dark' icon={icon} />
                     </IonButton>
-                </IonButtons>
+                    :
+                    <div className='w-5 h-5 rounded-md mr-[10px] bg-blue-400' />
+                }
+            </IonButtons>
         </IonItem>
     )
 }

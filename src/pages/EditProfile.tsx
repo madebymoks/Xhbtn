@@ -7,8 +7,8 @@ import { addOutline, logoFacebook, logoTwitter, logoInstagram, logoLinkedin } fr
 const EditProfile = () => {
     return (
         <IonPage>
-            <IonHeader class="ion-no-border">
-                <IonToolbar>
+            <IonHeader className="shadow-none" class="ion-no-border">
+                <IonToolbar className='scene-toolbar'>
 
                 </IonToolbar>
             </IonHeader>
