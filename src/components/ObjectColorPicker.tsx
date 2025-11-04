@@ -13,7 +13,7 @@ interface ColorPickerType {
 
 const ObjectColorPicker: React.FC<ColorPickerType> = ({ color, handleChangeColor }) => {
   return (
-    <div className='w-3/5 bg-gray-400/70 ml-6 rounded-lg p-1'>
+    <div className='w-3/5 bg-gray-500/70 border border-white/60 ml-6 rounded-lg p-1'>
       <ColorPicker hideInput={["hex", "rgb", "hsv"]} color={color} onChange={handleChangeColor} />
     </div>
   )

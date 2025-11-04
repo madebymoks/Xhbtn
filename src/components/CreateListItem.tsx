@@ -6,9 +6,10 @@ interface CreateListItemProps {
     label: string
     icon: any;
     createAction: () => void;
+    color: string;
 }
 
-const CreateListItem: React.FC<CreateListItemProps> = ({ label, icon, createAction }) => {
+const CreateListItem: React.FC<CreateListItemProps> = ({ label, icon, createAction, color }) => {
     return (
         <IonItem className='create-list' onClick={createAction}>
             <p className='text-xs'>{label}</p>
@@ -18,7 +19,7 @@ const CreateListItem: React.FC<CreateListItemProps> = ({ label, icon, createActi
                         <IonIcon slot="icon-only" size='small' color='dark' icon={icon} />
                     </IonButton>
                     :
-                    <div className='w-5 h-5 rounded-md mr-[10px] bg-blue-400' />
+                    <div style={{ backgroundColor: `${color}` }} className='w-5 h-5 border border-white rounded-md mr-[10px]' />
                 }
             </IonButtons>
         </IonItem>

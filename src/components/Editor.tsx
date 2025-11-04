@@ -14,7 +14,7 @@ interface EditorType {
 
 const Editor: React.FC<EditorType> = ({ statex, statey, setState, height, setHeight }) => {
     return (
-        <div className='w-auto h-[200px] bg-gray-400/70 rounded-lg ml-6 flex flex-row'>
+        <div className='w-auto h-[200px] bg-gray-500/70 border border-white/60 rounded-lg ml-6 flex flex-row'>
 
             <div className='w-[200px] h-[200px] p-3'>
                 <Position statex={statex} statey={statey} setState={setState} />
